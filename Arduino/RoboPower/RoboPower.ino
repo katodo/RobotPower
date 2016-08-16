@@ -14,10 +14,13 @@
 
 #define USE_USBCON
 
+#include "U8glib.h"
 #include <ros.h>
 #include <rosserial_arduino/Adc.h>
 #include <std_msgs/String.h>
 #include <sensor_msgs/BatteryState.h>
+
+U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE|U8G_I2C_OPT_DEV_0);  // I2C / TWI 
 
 unsigned int test;
 float  batteryArray[4]={3.628, 3.629, 3.515, 4};
@@ -34,6 +37,14 @@ std_msgs::String str_msg;
 ros::Publisher chatter("chatter", &str_msg);
 char hello[13] = "hello world!";
 
+void draw(void) {
+  // graphic commands to redraw the complete screen should be placed here  
+  u8g.setFont(u8g_font_unifont);
+  //u8g.setFont(u8g_font_osb21);
+  u8g.drawStr( 0, 22, "Hello World!");
+  
+  u8g.drawStr( 0, 44, test);
+}
 
 void setup()
 { 
@@ -43,6 +54,30 @@ void setup()
   nh.advertise(p);
   nh.advertise(k);
   nh.advertise(chatter);
+
+  // LCD setup
+  // flip screen, if required
+  // u8g.setRot180();
+  
+  // set SPI backup if required
+  //u8g.setHardwareBackup(u8g_backup_avr_spi);
+
+  // assign default color value
+  if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
+    u8g.setColorIndex(255);     // white
+  }
+  else if ( u8g.getMode() == U8G_MODE_GRAY2BIT ) {
+    u8g.setColorIndex(3);         // max intensity
+  }
+  else if ( u8g.getMode() == U8G_MODE_BW ) {
+    u8g.setColorIndex(1);         // pixel on
+  }
+  else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
+    u8g.setHiColorByRGB(255,255,255);
+  }
+  
+  pinMode(8, OUTPUT);
+  // END LCD SETUP
 }
 
 //We average the analog reading to elminate some of the noise
@@ -56,6 +91,12 @@ long adc_timer;
 
 void loop()
 {
+    // picture loop
+  u8g.firstPage();  
+  do {
+    draw();
+  } while( u8g.nextPage() );
+  
   battery_msg.voltage = 23.221;         //  Voltage in Volts (Mandatory)
   battery_msg.current = -2.900;          //  Current in Ampere - Negative when discharging (A)  (If unmeasured NaN)
   battery_msg.charge = 0.241;           //  Current charge in Ampere - Negative when discharging (A)  (If unmeasured NaN)

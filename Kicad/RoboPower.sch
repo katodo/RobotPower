@@ -49,30 +49,6 @@ Text Label 9250 1200 1    60   ~ 0
 IOREF
 Text Label 8900 1200 1    60   ~ 0
 Vin
-Text Label 9250 2450 0    60   ~ 0
-A0
-Text Label 9250 2550 0    60   ~ 0
-A1
-Text Label 9250 2650 0    60   ~ 0
-A2
-Text Label 9250 2750 0    60   ~ 0
-A3
-Text Label 9250 2850 0    60   ~ 0
-A4
-Text Label 9250 2950 0    60   ~ 0
-A5
-Text Label 9250 3050 0    60   ~ 0
-A6
-Text Label 9250 3150 0    60   ~ 0
-A7
-Text Label 8900 3400 0    60   ~ 0
-A8
-Text Label 8900 3500 0    60   ~ 0
-A9
-Text Label 8900 3600 0    60   ~ 0
-A10
-Text Label 8900 3700 0    60   ~ 0
-A11
 Text Label 8900 3800 0    60   ~ 0
 A12
 Text Label 8900 3900 0    60   ~ 0
@@ -145,10 +121,6 @@ Text Label 9100 5750 1    60   ~ 0
 51(MOSI)
 Text Label 9000 5750 1    60   ~ 0
 53(SS)
-Text Label 10150 4100 0    60   ~ 0
-21(SCL)
-Text Label 10150 4000 0    60   ~ 0
-20(SDA)
 Text Label 10400 3900 0    60   ~ 0
 19(Rx1)
 Text Label 10400 3800 0    60   ~ 0
@@ -161,12 +133,6 @@ Text Label 10400 3500 0    60   ~ 0
 15(Rx3)
 Text Label 10400 3400 0    60   ~ 0
 14(Tx3)
-Text Label 10150 1550 0    60   ~ 0
-13(**)
-Text Label 10150 1650 0    60   ~ 0
-12(**)
-Text Label 10150 1750 0    60   ~ 0
-11(**)
 Text Label 10150 1850 0    60   ~ 0
 10(**)
 Text Label 10150 1950 0    60   ~ 0
@@ -189,10 +155,6 @@ Text Label 10400 3050 0    60   ~ 0
 1(Tx0)
 Text Label 10400 3150 0    60   ~ 0
 0(Rx0)
-Text Label 10150 1250 0    60   ~ 0
-SDA
-Text Label 10150 1150 0    60   ~ 0
-SCL
 Text Label 10150 1350 0    60   ~ 0
 AREF
 Text Notes 8375 575  0    60   ~ 0
@@ -695,9 +657,9 @@ SCL1
 Text GLabel 10500 1250 2    60   BiDi ~ 0
 SDA1
 Text GLabel 2100 4275 2    60   BiDi ~ 0
-SCL
+SCL1
 Text GLabel 2100 4375 2    60   BiDi ~ 0
-SDA
+SDA1
 Text GLabel 2100 4475 2    60   Output ~ 0
 CHGEN
 Text GLabel 2100 4575 2    60   Output ~ 0
@@ -782,4 +744,59 @@ Wire Wire Line
 	2275 2250 2400 2250
 Wire Wire Line
 	2400 2350 2275 2350
+$Comp
+L CONN_01X04 P19
+U 1 1 57B37A5B
+P 4400 4500
+F 0 "P19" H 4319 4035 50  0000 C CNN
+F 1 "CONN_01X04" H 4319 4126 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 4319 4217 50  0000 C CNN
+F 3 "" H 4400 4500 50  0000 C CNN
+	1    4400 4500
+	-1   0    0    1   
+$EndComp
+Text GLabel 10550 4000 2    60   BiDi ~ 0
+SDA
+Text GLabel 10550 4100 2    60   BiDi ~ 0
+SCL
+Text GLabel 4725 4350 2    60   BiDi ~ 0
+SDA
+Text GLabel 4725 4450 2    60   BiDi ~ 0
+SCL
+$Comp
+L +3.3V #PWR09
+U 1 1 57B39559
+P 4725 4550
+F 0 "#PWR09" H 4725 4400 50  0001 C CNN
+F 1 "+3.3V" V 4740 4678 50  0000 L CNN
+F 2 "" H 4725 4550 50  0000 C CNN
+F 3 "" H 4725 4550 50  0000 C CNN
+	1    4725 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 57B396DF
+P 4725 4700
+F 0 "#PWR010" H 4725 4450 50  0001 C CNN
+F 1 "GND" H 4725 4550 50  0000 C CNN
+F 2 "" H 4725 4700 50  0000 C CNN
+F 3 "" H 4725 4700 50  0000 C CNN
+	1    4725 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 4650 4725 4650
+Wire Wire Line
+	4725 4650 4725 4700
+Wire Wire Line
+	4600 4450 4725 4450
+Wire Wire Line
+	4725 4350 4600 4350
+Wire Wire Line
+	4725 4550 4600 4550
+Text Notes 4100 5100 0    60   ~ 0
+0.96" OLED LCD connector\n
+Text Notes 4100 5225 0    31   Italic 0
+http://arduino-er.blogspot.it/2015/04/hello-world-096-inch-128x64-i2c-oled-on.html\n
 $EndSCHEMATC
