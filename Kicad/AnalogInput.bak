@@ -1,0 +1,1257 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:katodo_kicad
+LIBS:RoboPower-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date "2016-05-04"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 12K0 R2
+U 1 1 57AC5B82
+P 2300 4675
+F 0 "R2" H 2370 4750 50  0000 L CNN
+F 1 "12K" H 2370 4658 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 4675 28  0001 C CNN
+F 3 "" V 2380 4675 50  0000 C CNN
+F 4 "10.2020.0015" H 2370 4583 28  0000 L CNN "katodo"
+	1    2300 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R1
+U 1 1 57AC5B83
+P 2300 4225
+F 0 "R1" H 2370 4300 50  0000 L CNN
+F 1 "150K" H 2370 4208 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 4225 28  0001 C CNN
+F 3 "" V 2380 4225 50  0000 C CNN
+F 4 "10.2020.0009" H 2370 4133 28  0000 L CNN "katodo"
+	1    2300 4225
+	1    0    0    -1  
+$EndComp
+Text Notes 3775 5550 0    60   ~ 0
+Partitore: 47K/12K\nVin(Max) : 16.225V\nVout(Max) : 3.3V\nResolution :  3,96 mV/bit
+$Comp
+L GND #PWR09
+U 1 1 57AC5B84
+P 2300 4875
+F 0 "#PWR09" H 2300 4875 30  0001 C CNN
+F 1 "GND" H 2300 4805 30  0001 C CNN
+F 2 "" H 2300 4875 60  0000 C CNN
+F 3 "" H 2300 4875 60  0000 C CNN
+	1    2300 4875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 4825 2300 4875
+$Comp
+L CONN_01X02 AN0
+U 1 1 57AC5B85
+P 750 950
+F 0 "AN0" H 750 725 50  0000 C CNN
+F 1 "CONN_01X02" H 575 800 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 950 50  0001 C CNN
+F 3 "" H 750 950 50  0000 C CNN
+	1    750  950 
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 57AC5B86
+P 1000 1050
+F 0 "#PWR010" H 1000 1050 30  0001 C CNN
+F 1 "GND" H 1000 980 30  0001 C CNN
+F 2 "" H 1000 1050 60  0000 C CNN
+F 3 "" H 1000 1050 60  0000 C CNN
+	1    1000 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 1050 1000 1000
+Wire Wire Line
+	1000 1000 950  1000
+Wire Wire Line
+	2300 4375 2300 4525
+$Comp
+L C C1
+U 1 1 57AC5B87
+P 2750 4725
+F 0 "C1" H 2865 4816 50  0000 L CNN
+F 1 "100nF" H 2865 4725 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 2865 4634 50  0001 L CNN
+F 3 "" H 2750 4725 50  0000 C CNN
+F 4 "10.1010.0003" H 3025 4650 31  0000 C CNN "katodo"
+	1    2750 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 57AC5B88
+P 2750 4875
+F 0 "#PWR011" H 2750 4875 30  0001 C CNN
+F 1 "GND" H 2750 4805 30  0001 C CNN
+F 2 "" H 2750 4875 60  0000 C CNN
+F 3 "" H 2750 4875 60  0000 C CNN
+	1    2750 4875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 4425 3050 4425
+Wire Wire Line
+	2750 4425 2750 4575
+Connection ~ 2300 4425
+Connection ~ 2750 4425
+$Comp
+L 12K0 R4
+U 1 1 57AC5B89
+P 2300 3625
+F 0 "R4" H 2370 3700 50  0000 L CNN
+F 1 "12K" H 2370 3608 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 3625 28  0001 C CNN
+F 3 "" V 2380 3625 50  0000 C CNN
+F 4 "10.2020.0015" H 2370 3533 28  0000 L CNN "katodo"
+	1    2300 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R3
+U 1 1 57AC5B8A
+P 2300 3175
+F 0 "R3" H 2370 3250 50  0000 L CNN
+F 1 "150K" H 2370 3158 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 3175 28  0001 C CNN
+F 3 "" V 2380 3175 50  0000 C CNN
+F 4 "10.2020.0009" H 2370 3083 28  0000 L CNN "katodo"
+	1    2300 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 57AC5B8B
+P 2300 3825
+F 0 "#PWR012" H 2300 3825 30  0001 C CNN
+F 1 "GND" H 2300 3755 30  0001 C CNN
+F 2 "" H 2300 3825 60  0000 C CNN
+F 3 "" H 2300 3825 60  0000 C CNN
+	1    2300 3825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3775 2300 3825
+Wire Wire Line
+	2300 3325 2300 3475
+$Comp
+L GND #PWR013
+U 1 1 57AC5B8D
+P 2750 3825
+F 0 "#PWR013" H 2750 3825 30  0001 C CNN
+F 1 "GND" H 2750 3755 30  0001 C CNN
+F 2 "" H 2750 3825 60  0000 C CNN
+F 3 "" H 2750 3825 60  0000 C CNN
+	1    2750 3825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 3375 3050 3375
+Wire Wire Line
+	2750 3375 2750 3525
+Connection ~ 2300 3375
+Connection ~ 2750 3375
+$Comp
+L 12K0 R6
+U 1 1 57AC5B8E
+P 2300 2575
+F 0 "R6" H 2370 2650 50  0000 L CNN
+F 1 "12K" H 2370 2558 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 2575 28  0001 C CNN
+F 3 "" V 2380 2575 50  0000 C CNN
+F 4 "10.2020.0015" H 2370 2483 28  0000 L CNN "katodo"
+	1    2300 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R5
+U 1 1 57AC5B8F
+P 2300 2125
+F 0 "R5" H 2370 2200 50  0000 L CNN
+F 1 "150K" H 2370 2108 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 2125 28  0001 C CNN
+F 3 "" V 2380 2125 50  0000 C CNN
+F 4 "10.2020.0009" H 2370 2033 28  0000 L CNN "katodo"
+	1    2300 2125
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR014
+U 1 1 57AC5B90
+P 2300 2775
+F 0 "#PWR014" H 2300 2775 30  0001 C CNN
+F 1 "GND" H 2300 2705 30  0001 C CNN
+F 2 "" H 2300 2775 60  0000 C CNN
+F 3 "" H 2300 2775 60  0000 C CNN
+	1    2300 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2725 2300 2775
+Wire Wire Line
+	2300 2275 2300 2425
+$Comp
+L GND #PWR015
+U 1 1 57AC5B92
+P 2750 2775
+F 0 "#PWR015" H 2750 2775 30  0001 C CNN
+F 1 "GND" H 2750 2705 30  0001 C CNN
+F 2 "" H 2750 2775 60  0000 C CNN
+F 3 "" H 2750 2775 60  0000 C CNN
+	1    2750 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2325 3050 2325
+Wire Wire Line
+	2750 2325 2750 2475
+Connection ~ 2300 2325
+Connection ~ 2750 2325
+$Comp
+L 12K0 R8
+U 1 1 57AC5B93
+P 2300 1525
+F 0 "R8" H 2370 1600 50  0000 L CNN
+F 1 "12K" H 2370 1508 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 1525 28  0001 C CNN
+F 3 "" V 2380 1525 50  0000 C CNN
+F 4 "10.2020.0015" H 2370 1433 28  0000 L CNN "katodo"
+	1    2300 1525
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R7
+U 1 1 57AC5B94
+P 2300 1075
+F 0 "R7" H 2370 1150 50  0000 L CNN
+F 1 "150K" H 2370 1058 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 2230 1075 28  0001 C CNN
+F 3 "" V 2380 1075 50  0000 C CNN
+F 4 "10.2020.0009" H 2370 983 28  0000 L CNN "katodo"
+	1    2300 1075
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR016
+U 1 1 57AC5B95
+P 2300 1725
+F 0 "#PWR016" H 2300 1725 30  0001 C CNN
+F 1 "GND" H 2300 1655 30  0001 C CNN
+F 2 "" H 2300 1725 60  0000 C CNN
+F 3 "" H 2300 1725 60  0000 C CNN
+	1    2300 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1675 2300 1725
+Wire Wire Line
+	2300 1225 2300 1375
+$Comp
+L GND #PWR017
+U 1 1 57AC5B97
+P 2750 1725
+F 0 "#PWR017" H 2750 1725 30  0001 C CNN
+F 1 "GND" H 2750 1655 30  0001 C CNN
+F 2 "" H 2750 1725 60  0000 C CNN
+F 3 "" H 2750 1725 60  0000 C CNN
+	1    2750 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 1275 3050 1275
+Wire Wire Line
+	2750 1275 2750 1425
+Connection ~ 2300 1275
+Connection ~ 2750 1275
+Wire Wire Line
+	2125 4050 2300 4050
+Wire Wire Line
+	2300 4050 2300 4075
+Wire Wire Line
+	2150 3000 2300 3000
+Wire Wire Line
+	2300 3000 2300 3025
+Wire Wire Line
+	2175 900  2300 900 
+Wire Wire Line
+	2300 900  2300 925 
+Wire Wire Line
+	2150 1950 2300 1950
+Wire Wire Line
+	2300 1950 2300 1975
+Text GLabel 2175 900  0    60   Input ~ 0
+IN0
+Text GLabel 2150 1950 0    60   Input ~ 0
+IN1
+Text GLabel 2150 3000 0    60   Input ~ 0
+IN2
+Text GLabel 2125 4050 0    60   Input ~ 0
+IN3
+Wire Wire Line
+	950  900  1150 900 
+Text GLabel 1150 900  2    60   Input ~ 0
+IN0
+Text HLabel 3050 1275 2    60   Output ~ 0
+AN0
+Text HLabel 3050 2325 2    60   Output ~ 0
+AN1
+Text HLabel 3050 3375 2    60   Output ~ 0
+AN2
+Text HLabel 3050 4425 2    60   Output ~ 0
+AN3
+$Comp
+L 12K0 R10
+U 1 1 57AC6731
+P 3950 4675
+F 0 "R10" H 4020 4750 50  0000 L CNN
+F 1 "12K" H 4020 4658 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 4675 28  0001 C CNN
+F 3 "" V 4030 4675 50  0000 C CNN
+F 4 "10.2020.0015" H 4020 4583 28  0000 L CNN "katodo"
+	1    3950 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L 47K0 R9
+U 1 1 57AC6738
+P 3950 4225
+F 0 "R9" H 4020 4300 50  0000 L CNN
+F 1 "47K0" H 4020 4208 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 4225 28  0001 C CNN
+F 3 "" V 4030 4225 50  0000 C CNN
+F 4 "10.2020.0001" H 4020 4133 28  0000 L CNN "katodo"
+	1    3950 4225
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR018
+U 1 1 57AC673F
+P 3950 4875
+F 0 "#PWR018" H 3950 4875 30  0001 C CNN
+F 1 "GND" H 3950 4805 30  0001 C CNN
+F 2 "" H 3950 4875 60  0000 C CNN
+F 3 "" H 3950 4875 60  0000 C CNN
+	1    3950 4875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 4825 3950 4875
+Wire Wire Line
+	3950 4375 3950 4525
+$Comp
+L GND #PWR019
+U 1 1 57AC674E
+P 4400 4875
+F 0 "#PWR019" H 4400 4875 30  0001 C CNN
+F 1 "GND" H 4400 4805 30  0001 C CNN
+F 2 "" H 4400 4875 60  0000 C CNN
+F 3 "" H 4400 4875 60  0000 C CNN
+	1    4400 4875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 4425 4700 4425
+Wire Wire Line
+	4400 4425 4400 4575
+Connection ~ 3950 4425
+Connection ~ 4400 4425
+$Comp
+L 12K0 R12
+U 1 1 57AC675A
+P 3950 3625
+F 0 "R12" H 4020 3700 50  0000 L CNN
+F 1 "12K" H 4020 3608 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 3625 28  0001 C CNN
+F 3 "" V 4030 3625 50  0000 C CNN
+F 4 "10.2020.0015" H 4020 3533 28  0000 L CNN "katodo"
+	1    3950 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L 47K0 R11
+U 1 1 57AC6761
+P 3950 3175
+F 0 "R11" H 4020 3250 50  0000 L CNN
+F 1 "47K0" H 4020 3158 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 3175 28  0001 C CNN
+F 3 "" V 4030 3175 50  0000 C CNN
+F 4 "10.2020.0001" H 4020 3083 28  0000 L CNN "katodo"
+	1    3950 3175
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR020
+U 1 1 57AC6767
+P 3950 3825
+F 0 "#PWR020" H 3950 3825 30  0001 C CNN
+F 1 "GND" H 3950 3755 30  0001 C CNN
+F 2 "" H 3950 3825 60  0000 C CNN
+F 3 "" H 3950 3825 60  0000 C CNN
+	1    3950 3825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3775 3950 3825
+Wire Wire Line
+	3950 3325 3950 3475
+$Comp
+L GND #PWR021
+U 1 1 57AC6776
+P 4400 3825
+F 0 "#PWR021" H 4400 3825 30  0001 C CNN
+F 1 "GND" H 4400 3755 30  0001 C CNN
+F 2 "" H 4400 3825 60  0000 C CNN
+F 3 "" H 4400 3825 60  0000 C CNN
+	1    4400 3825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3375 4700 3375
+Wire Wire Line
+	4400 3375 4400 3525
+Connection ~ 3950 3375
+Connection ~ 4400 3375
+$Comp
+L 12K0 R14
+U 1 1 57AC6782
+P 3950 2575
+F 0 "R14" H 4020 2650 50  0000 L CNN
+F 1 "12K" H 4020 2558 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 2575 28  0001 C CNN
+F 3 "" V 4030 2575 50  0000 C CNN
+F 4 "10.2020.0015" H 4020 2483 28  0000 L CNN "katodo"
+	1    3950 2575
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R13
+U 1 1 57AC6789
+P 3950 2125
+F 0 "R13" H 4020 2200 50  0000 L CNN
+F 1 "150K0" H 4020 2108 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 2125 28  0001 C CNN
+F 3 "" V 4030 2125 50  0000 C CNN
+F 4 "10.2020.0009" H 4020 2033 28  0000 L CNN "katodo"
+	1    3950 2125
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR022
+U 1 1 57AC6790
+P 3950 2775
+F 0 "#PWR022" H 3950 2775 30  0001 C CNN
+F 1 "GND" H 3950 2705 30  0001 C CNN
+F 2 "" H 3950 2775 60  0000 C CNN
+F 3 "" H 3950 2775 60  0000 C CNN
+	1    3950 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2725 3950 2775
+Wire Wire Line
+	3950 2275 3950 2425
+$Comp
+L GND #PWR023
+U 1 1 57AC679F
+P 4400 2775
+F 0 "#PWR023" H 4400 2775 30  0001 C CNN
+F 1 "GND" H 4400 2705 30  0001 C CNN
+F 2 "" H 4400 2775 60  0000 C CNN
+F 3 "" H 4400 2775 60  0000 C CNN
+	1    4400 2775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 2325 4700 2325
+Wire Wire Line
+	4400 2325 4400 2475
+Connection ~ 3950 2325
+Connection ~ 4400 2325
+$Comp
+L 12K0 R16
+U 1 1 57AC67AB
+P 3950 1525
+F 0 "R16" H 4020 1600 50  0000 L CNN
+F 1 "12K" H 4020 1508 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 1525 28  0001 C CNN
+F 3 "" V 4030 1525 50  0000 C CNN
+F 4 "10.2020.0015" H 4020 1433 28  0000 L CNN "katodo"
+	1    3950 1525
+	1    0    0    -1  
+$EndComp
+$Comp
+L 150K0 R15
+U 1 1 57AC67B2
+P 3950 1075
+F 0 "R15" H 4020 1150 50  0000 L CNN
+F 1 "150K0" H 4020 1058 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 3880 1075 28  0001 C CNN
+F 3 "" V 4030 1075 50  0000 C CNN
+F 4 "10.2020.0009" H 4020 983 28  0000 L CNN "katodo"
+	1    3950 1075
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR024
+U 1 1 57AC67B9
+P 3950 1725
+F 0 "#PWR024" H 3950 1725 30  0001 C CNN
+F 1 "GND" H 3950 1655 30  0001 C CNN
+F 2 "" H 3950 1725 60  0000 C CNN
+F 3 "" H 3950 1725 60  0000 C CNN
+	1    3950 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 1675 3950 1725
+Wire Wire Line
+	3950 1225 3950 1375
+$Comp
+L GND #PWR025
+U 1 1 57AC67C8
+P 4400 1725
+F 0 "#PWR025" H 4400 1725 30  0001 C CNN
+F 1 "GND" H 4400 1655 30  0001 C CNN
+F 2 "" H 4400 1725 60  0000 C CNN
+F 3 "" H 4400 1725 60  0000 C CNN
+	1    4400 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 1275 4700 1275
+Wire Wire Line
+	4400 1275 4400 1425
+Connection ~ 3950 1275
+Connection ~ 4400 1275
+Wire Wire Line
+	3775 4050 3950 4050
+Wire Wire Line
+	3950 4050 3950 4075
+Wire Wire Line
+	3800 3000 3950 3000
+Wire Wire Line
+	3950 3000 3950 3025
+Wire Wire Line
+	3825 900  3950 900 
+Wire Wire Line
+	3950 900  3950 925 
+Wire Wire Line
+	3800 1950 3950 1950
+Wire Wire Line
+	3950 1950 3950 1975
+Text GLabel 3825 900  0    60   Input ~ 0
+IN4
+Text GLabel 3800 1950 0    60   Input ~ 0
+IN5
+Text GLabel 3800 3000 0    60   Input ~ 0
+IN6
+Text GLabel 3775 4050 0    60   Input ~ 0
+IN7
+Text HLabel 4700 1275 2    60   Output ~ 0
+AN4
+Text HLabel 4700 2325 2    60   Output ~ 0
+AN5
+Text HLabel 4700 3375 2    60   Output ~ 0
+AN6
+Text HLabel 4700 4425 2    60   Output ~ 0
+AN7
+$Comp
+L CONN_01X02 AN1
+U 1 1 57AD0751
+P 750 1375
+F 0 "AN1" H 750 1150 50  0000 C CNN
+F 1 "CONN_01X02" H 575 1225 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 1375 50  0001 C CNN
+F 3 "" H 750 1375 50  0000 C CNN
+	1    750  1375
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR026
+U 1 1 57AD0757
+P 1000 1475
+F 0 "#PWR026" H 1000 1475 30  0001 C CNN
+F 1 "GND" H 1000 1405 30  0001 C CNN
+F 2 "" H 1000 1475 60  0000 C CNN
+F 3 "" H 1000 1475 60  0000 C CNN
+	1    1000 1475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 1475 1000 1425
+Wire Wire Line
+	1000 1425 950  1425
+Wire Wire Line
+	950  1325 1150 1325
+Text GLabel 1150 1325 2    60   Input ~ 0
+IN1
+$Comp
+L CONN_01X02 AN2
+U 1 1 57AD0D26
+P 750 1800
+F 0 "AN2" H 750 1575 50  0000 C CNN
+F 1 "CONN_01X02" H 575 1650 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 1800 50  0001 C CNN
+F 3 "" H 750 1800 50  0000 C CNN
+	1    750  1800
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR027
+U 1 1 57AD0D2C
+P 1000 1900
+F 0 "#PWR027" H 1000 1900 30  0001 C CNN
+F 1 "GND" H 1000 1830 30  0001 C CNN
+F 2 "" H 1000 1900 60  0000 C CNN
+F 3 "" H 1000 1900 60  0000 C CNN
+	1    1000 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 1900 1000 1850
+Wire Wire Line
+	1000 1850 950  1850
+Wire Wire Line
+	950  1750 1150 1750
+Text GLabel 1150 1750 2    60   Input ~ 0
+IN2
+$Comp
+L CONN_01X02 AN3
+U 1 1 57AD0D36
+P 750 2225
+F 0 "AN3" H 750 2000 50  0000 C CNN
+F 1 "CONN_01X02" H 575 2075 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 2225 50  0001 C CNN
+F 3 "" H 750 2225 50  0000 C CNN
+	1    750  2225
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR028
+U 1 1 57AD0D3C
+P 1000 2325
+F 0 "#PWR028" H 1000 2325 30  0001 C CNN
+F 1 "GND" H 1000 2255 30  0001 C CNN
+F 2 "" H 1000 2325 60  0000 C CNN
+F 3 "" H 1000 2325 60  0000 C CNN
+	1    1000 2325
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 2325 1000 2275
+Wire Wire Line
+	1000 2275 950  2275
+Wire Wire Line
+	950  2175 1150 2175
+Text GLabel 1150 2175 2    60   Input ~ 0
+IN3
+$Comp
+L CONN_01X02 AN4
+U 1 1 57AD0F34
+P 750 2650
+F 0 "AN4" H 750 2425 50  0000 C CNN
+F 1 "CONN_01X02" H 575 2500 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 2650 50  0001 C CNN
+F 3 "" H 750 2650 50  0000 C CNN
+	1    750  2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR029
+U 1 1 57AD0F3A
+P 1000 2750
+F 0 "#PWR029" H 1000 2750 30  0001 C CNN
+F 1 "GND" H 1000 2680 30  0001 C CNN
+F 2 "" H 1000 2750 60  0000 C CNN
+F 3 "" H 1000 2750 60  0000 C CNN
+	1    1000 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 2750 1000 2700
+Wire Wire Line
+	1000 2700 950  2700
+Wire Wire Line
+	950  2600 1150 2600
+Text GLabel 1150 2600 2    60   Input ~ 0
+IN4
+$Comp
+L CONN_01X02 AN5
+U 1 1 57AD0F44
+P 750 3075
+F 0 "AN5" H 750 2850 50  0000 C CNN
+F 1 "CONN_01X02" H 575 2925 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 3075 50  0001 C CNN
+F 3 "" H 750 3075 50  0000 C CNN
+	1    750  3075
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR030
+U 1 1 57AD0F4A
+P 1000 3175
+F 0 "#PWR030" H 1000 3175 30  0001 C CNN
+F 1 "GND" H 1000 3105 30  0001 C CNN
+F 2 "" H 1000 3175 60  0000 C CNN
+F 3 "" H 1000 3175 60  0000 C CNN
+	1    1000 3175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 3175 1000 3125
+Wire Wire Line
+	1000 3125 950  3125
+Wire Wire Line
+	950  3025 1150 3025
+Text GLabel 1150 3025 2    60   Input ~ 0
+IN5
+$Comp
+L CONN_01X02 AN6
+U 1 1 57AD0F54
+P 750 3500
+F 0 "AN6" H 750 3275 50  0000 C CNN
+F 1 "CONN_01X02" H 575 3350 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 3500 50  0001 C CNN
+F 3 "" H 750 3500 50  0000 C CNN
+	1    750  3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR031
+U 1 1 57AD0F5A
+P 1000 3600
+F 0 "#PWR031" H 1000 3600 30  0001 C CNN
+F 1 "GND" H 1000 3530 30  0001 C CNN
+F 2 "" H 1000 3600 60  0000 C CNN
+F 3 "" H 1000 3600 60  0000 C CNN
+	1    1000 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 3600 1000 3550
+Wire Wire Line
+	1000 3550 950  3550
+Wire Wire Line
+	950  3450 1150 3450
+Text GLabel 1150 3450 2    60   Input ~ 0
+IN6
+$Comp
+L CONN_01X02 AN7
+U 1 1 57AD0F64
+P 750 3925
+F 0 "AN7" H 750 3700 50  0000 C CNN
+F 1 "CONN_01X02" H 575 3775 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2021" H 750 3925 50  0001 C CNN
+F 3 "" H 750 3925 50  0000 C CNN
+	1    750  3925
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR032
+U 1 1 57AD0F6A
+P 1000 4025
+F 0 "#PWR032" H 1000 4025 30  0001 C CNN
+F 1 "GND" H 1000 3955 30  0001 C CNN
+F 2 "" H 1000 4025 60  0000 C CNN
+F 3 "" H 1000 4025 60  0000 C CNN
+	1    1000 4025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 4025 1000 3975
+Wire Wire Line
+	1000 3975 950  3975
+Wire Wire Line
+	950  3875 1150 3875
+Text GLabel 1150 3875 2    60   Input ~ 0
+IN7
+Text Notes 575  7750 0    60   ~ 0
+The Arduino Due has 12 analog inputs, each of which can provide 12 bits of resolution (i.e. 4096 different values).\nBy default, the resolution of the readings is set at 10 bits, for compatibility with other Arduino boards.\nIt is possible to change the resolution of the ADC with analogReadResolution(). \nThe Due’s analog inputs pins measure from ground to a maximum value of 3.3V. \nApplying more than 3.3V on the Due’s pins will damage the SAM3X chip. \nThe analogReference() function is ignored on the Due.\nThe AREF pin is connected to the SAM3X analog reference pin through a resistor bridge. \nTo use the AREF pin, resistor BR1 must be desoldered from the PCB.
+$Comp
+L C C3
+U 1 1 57B306A9
+P 2750 2625
+F 0 "C3" H 2865 2716 50  0000 L CNN
+F 1 "100nF" H 2865 2625 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 2865 2534 50  0001 L CNN
+F 3 "" H 2750 2625 50  0000 C CNN
+F 4 "10.1010.0003" H 3025 2550 31  0000 C CNN "katodo"
+	1    2750 2625
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C2
+U 1 1 57B3072A
+P 2750 3675
+F 0 "C2" H 2865 3766 50  0000 L CNN
+F 1 "100nF" H 2865 3675 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 2865 3584 50  0001 L CNN
+F 3 "" H 2750 3675 50  0000 C CNN
+F 4 "10.1010.0003" H 3025 3600 31  0000 C CNN "katodo"
+	1    2750 3675
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 57B307DA
+P 4400 4725
+F 0 "C5" H 4515 4816 50  0000 L CNN
+F 1 "100nF" H 4515 4725 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 4515 4634 50  0001 L CNN
+F 3 "" H 4400 4725 50  0000 C CNN
+F 4 "10.1010.0003" H 4675 4650 31  0000 C CNN "katodo"
+	1    4400 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C6
+U 1 1 57B3086F
+P 4400 3675
+F 0 "C6" H 4515 3766 50  0000 L CNN
+F 1 "100nF" H 4515 3675 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 4515 3584 50  0001 L CNN
+F 3 "" H 4400 3675 50  0000 C CNN
+F 4 "10.1010.0003" H 4675 3600 31  0000 C CNN "katodo"
+	1    4400 3675
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 57B308FF
+P 2750 1575
+F 0 "C4" H 2865 1666 50  0000 L CNN
+F 1 "100nF" H 2865 1575 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 2865 1484 50  0001 L CNN
+F 3 "" H 2750 1575 50  0000 C CNN
+F 4 "10.1010.0003" H 3025 1500 31  0000 C CNN "katodo"
+	1    2750 1575
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C7
+U 1 1 57B30996
+P 4400 2625
+F 0 "C7" H 4515 2716 50  0000 L CNN
+F 1 "100nF" H 4515 2625 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 4515 2534 50  0001 L CNN
+F 3 "" H 4400 2625 50  0000 C CNN
+F 4 "10.1010.0003" H 4675 2550 31  0000 C CNN "katodo"
+	1    4400 2625
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C8
+U 1 1 57B316F6
+P 4400 1575
+F 0 "C8" H 4515 1666 50  0000 L CNN
+F 1 "100nF" H 4515 1575 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Rect_L7_W2_P5" H 4515 1484 50  0001 L CNN
+F 3 "" H 4400 1575 50  0000 C CNN
+F 4 "10.1010.0003" H 4675 1500 31  0000 C CNN "katodo"
+	1    4400 1575
+	1    0    0    -1  
+$EndComp
+Text Notes 2150 1550 1    60   ~ 0
+SUPPLY\nMOTORE1
+Text Notes 2150 2675 1    60   ~ 0
+SUPPLY\nMOTORE2
+Text Notes 2150 3725 1    60   ~ 0
+BATTERY
+Text Notes 2150 4775 1    60   ~ 0
+MAIN\nSUPPLY
+Text Notes 1950 5575 0    60   ~ 0
+Partitore: 150K/12K\nVin(Max) : 44.55V\nVout(Max) : 3.3V\nResolution :  10.8 mV/bit
+Text Notes 5175 4725 1    60   ~ 0
+JETSON\n(0-16.225V)
+Text Notes 5250 3825 1    60   ~ 0
++5V\n(0-16.225V)
+Text Notes 5175 1575 1    60   ~ 0
+24V \nFILTER1
+Text Notes 5175 2575 1    60   ~ 0
+24V \nFILTER2
+Text HLabel 7275 2325 2    60   Input ~ 0
+AN8
+Text HLabel 7275 3425 2    60   Input ~ 0
+AN9
+Text HLabel 9025 2325 2    60   Input ~ 0
+AN10
+Text HLabel 9025 3425 2    60   Input ~ 0
+AN11
+Text Notes 5425 975  0    60   ~ 0
+ACS712ELC MODULE INPUT\n+/- 20A Current Sensor\nhttp://www.allegromicro.com/~/media/files/datasheets/acs712-datasheet.ashx\nSensibility: 100mV/A\n
+$Comp
+L CONN_01X03 P14
+U 1 1 57B36A8E
+P 6550 1900
+F 0 "P14" H 6628 1941 50  0000 L CNN
+F 1 "CONN_01X03" H 6628 1850 50  0000 L CNN
+F 2 "w_conn_kk100:kk100_22-23-2031" H 6628 1804 31  0001 L CNN
+F 3 "" H 6550 1900 50  0000 C CNN
+F 4 "10.8030.0002" H 6550 1900 60  0001 C CNN "KATODO"
+	1    6550 1900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR033
+U 1 1 57B36BC3
+P 6800 2650
+F 0 "#PWR033" H 6800 2650 30  0001 C CNN
+F 1 "GND" H 6800 2580 30  0001 C CNN
+F 2 "" H 6800 2650 60  0000 C CNN
+F 3 "" H 6800 2650 60  0000 C CNN
+	1    6800 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR034
+U 1 1 57B38C02
+P 6750 1800
+F 0 "#PWR034" H 6750 1650 50  0001 C CNN
+F 1 "+5V" V 6765 1928 50  0000 L CNN
+F 2 "" H 6750 1800 50  0000 C CNN
+F 3 "" H 6750 1800 50  0000 C CNN
+	1    6750 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6750 2000 6800 2000
+Wire Wire Line
+	6800 2000 6800 2650
+$Comp
+L 12K0 R18
+U 1 1 57B3921D
+P 6950 2500
+F 0 "R18" H 7020 2575 50  0000 L CNN
+F 1 "12K" H 7020 2483 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6880 2500 28  0001 C CNN
+F 3 "" V 7030 2500 50  0000 C CNN
+F 4 "10.2020.0015" H 7020 2408 28  0000 L CNN "katodo"
+	1    6950 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 6K8 R17
+U 1 1 57B39422
+P 6950 2150
+F 0 "R17" H 7020 2224 50  0000 L CNN
+F 1 "6K8" H 7020 2133 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6880 2150 28  0001 C CNN
+F 3 "" V 7030 2150 50  0000 C CNN
+F 4 "10.2020.0018" H 7020 2059 28  0000 L CNN "katodo"
+	1    6950 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 1900 6950 1900
+Wire Wire Line
+	6950 1900 6950 2000
+Wire Wire Line
+	6950 2300 6950 2350
+$Comp
+L GND #PWR035
+U 1 1 57B39775
+P 6950 2650
+F 0 "#PWR035" H 6950 2650 30  0001 C CNN
+F 1 "GND" H 6950 2580 30  0001 C CNN
+F 2 "" H 6950 2650 60  0000 C CNN
+F 3 "" H 6950 2650 60  0000 C CNN
+	1    6950 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 2325 7275 2325
+Connection ~ 6950 2325
+Text Notes 5975 1650 0    60   ~ 0
++20A=> 2,5+(0,1*20)= 4,5V => AN8=2,872V\n0A    => 2,5+(0,1*0)  = 2,5V => AN8=1.59574\n-20A=> 2,5+(0,1*-20)= 0,5V => AN8=0.312V
+$Comp
+L CONN_01X03 P15
+U 1 1 57B3A326
+P 6550 3000
+F 0 "P15" H 6628 3041 50  0000 L CNN
+F 1 "CONN_01X03" H 6628 2950 50  0000 L CNN
+F 2 "w_conn_kk100:kk100_22-23-2031" H 6628 2904 31  0001 L CNN
+F 3 "" H 6550 3000 50  0000 C CNN
+F 4 "10.8030.0002" H 6550 3000 60  0001 C CNN "KATODO"
+	1    6550 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR036
+U 1 1 57B3A32C
+P 6800 3750
+F 0 "#PWR036" H 6800 3750 30  0001 C CNN
+F 1 "GND" H 6800 3680 30  0001 C CNN
+F 2 "" H 6800 3750 60  0000 C CNN
+F 3 "" H 6800 3750 60  0000 C CNN
+	1    6800 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR037
+U 1 1 57B3A332
+P 6750 2900
+F 0 "#PWR037" H 6750 2750 50  0001 C CNN
+F 1 "+5V" V 6765 3028 50  0000 L CNN
+F 2 "" H 6750 2900 50  0000 C CNN
+F 3 "" H 6750 2900 50  0000 C CNN
+	1    6750 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6750 3100 6800 3100
+Wire Wire Line
+	6800 3100 6800 3750
+$Comp
+L 12K0 R20
+U 1 1 57B3A33B
+P 6950 3600
+F 0 "R20" H 7020 3675 50  0000 L CNN
+F 1 "12K" H 7020 3583 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6880 3600 28  0001 C CNN
+F 3 "" V 7030 3600 50  0000 C CNN
+F 4 "10.2020.0015" H 7020 3508 28  0000 L CNN "katodo"
+	1    6950 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 6K8 R19
+U 1 1 57B3A342
+P 6950 3250
+F 0 "R19" H 7020 3324 50  0000 L CNN
+F 1 "6K8" H 7020 3233 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 6880 3250 28  0001 C CNN
+F 3 "" V 7030 3250 50  0000 C CNN
+F 4 "10.2020.0018" H 7020 3159 28  0000 L CNN "katodo"
+	1    6950 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 3000 6950 3000
+Wire Wire Line
+	6950 3000 6950 3100
+Wire Wire Line
+	6950 3400 6950 3450
+$Comp
+L GND #PWR038
+U 1 1 57B3A34B
+P 6950 3750
+F 0 "#PWR038" H 6950 3750 30  0001 C CNN
+F 1 "GND" H 6950 3680 30  0001 C CNN
+F 2 "" H 6950 3750 60  0000 C CNN
+F 3 "" H 6950 3750 60  0000 C CNN
+	1    6950 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3425 7275 3425
+Connection ~ 6950 3425
+$Comp
+L CONN_01X03 P17
+U 1 1 57B3A9CD
+P 8300 1900
+F 0 "P17" H 8378 1941 50  0000 L CNN
+F 1 "CONN_01X03" H 8378 1850 50  0000 L CNN
+F 2 "w_conn_kk100:kk100_22-23-2031" H 8378 1804 31  0001 L CNN
+F 3 "" H 8300 1900 50  0000 C CNN
+F 4 "10.8030.0002" H 8300 1900 60  0001 C CNN "KATODO"
+	1    8300 1900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR039
+U 1 1 57B3A9D3
+P 8550 2650
+F 0 "#PWR039" H 8550 2650 30  0001 C CNN
+F 1 "GND" H 8550 2580 30  0001 C CNN
+F 2 "" H 8550 2650 60  0000 C CNN
+F 3 "" H 8550 2650 60  0000 C CNN
+	1    8550 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR040
+U 1 1 57B3A9D9
+P 8500 1800
+F 0 "#PWR040" H 8500 1650 50  0001 C CNN
+F 1 "+5V" V 8515 1928 50  0000 L CNN
+F 2 "" H 8500 1800 50  0000 C CNN
+F 3 "" H 8500 1800 50  0000 C CNN
+	1    8500 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8500 2000 8550 2000
+Wire Wire Line
+	8550 2000 8550 2650
+$Comp
+L 12K0 R22
+U 1 1 57B3A9E2
+P 8700 2500
+F 0 "R22" H 8770 2575 50  0000 L CNN
+F 1 "12K" H 8770 2483 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 8630 2500 28  0001 C CNN
+F 3 "" V 8780 2500 50  0000 C CNN
+F 4 "10.2020.0015" H 8770 2408 28  0000 L CNN "katodo"
+	1    8700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 6K8 R21
+U 1 1 57B3A9E9
+P 8700 2150
+F 0 "R21" H 8770 2224 50  0000 L CNN
+F 1 "6K8" H 8770 2133 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 8630 2150 28  0001 C CNN
+F 3 "" V 8780 2150 50  0000 C CNN
+F 4 "10.2020.0018" H 8770 2059 28  0000 L CNN "katodo"
+	1    8700 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 1900 8700 1900
+Wire Wire Line
+	8700 1900 8700 2000
+Wire Wire Line
+	8700 2300 8700 2350
+$Comp
+L GND #PWR041
+U 1 1 57B3A9F2
+P 8700 2650
+F 0 "#PWR041" H 8700 2650 30  0001 C CNN
+F 1 "GND" H 8700 2580 30  0001 C CNN
+F 2 "" H 8700 2650 60  0000 C CNN
+F 3 "" H 8700 2650 60  0000 C CNN
+	1    8700 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 2325 9025 2325
+Connection ~ 8700 2325
+$Comp
+L CONN_01X03 P18
+U 1 1 57B3A9FC
+P 8300 3000
+F 0 "P18" H 8378 3041 50  0000 L CNN
+F 1 "CONN_01X03" H 8378 2950 50  0000 L CNN
+F 2 "w_conn_kk100:kk100_22-23-2031" H 8378 2904 31  0001 L CNN
+F 3 "" H 8300 3000 50  0000 C CNN
+F 4 "10.8030.0002" H 8300 3000 60  0001 C CNN "KATODO"
+	1    8300 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR042
+U 1 1 57B3AA02
+P 8550 3750
+F 0 "#PWR042" H 8550 3750 30  0001 C CNN
+F 1 "GND" H 8550 3680 30  0001 C CNN
+F 2 "" H 8550 3750 60  0000 C CNN
+F 3 "" H 8550 3750 60  0000 C CNN
+	1    8550 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR043
+U 1 1 57B3AA08
+P 8500 2900
+F 0 "#PWR043" H 8500 2750 50  0001 C CNN
+F 1 "+5V" V 8515 3028 50  0000 L CNN
+F 2 "" H 8500 2900 50  0000 C CNN
+F 3 "" H 8500 2900 50  0000 C CNN
+	1    8500 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8500 3100 8550 3100
+Wire Wire Line
+	8550 3100 8550 3750
+$Comp
+L 12K0 R24
+U 1 1 57B3AA11
+P 8700 3600
+F 0 "R24" H 8770 3675 50  0000 L CNN
+F 1 "12K" H 8770 3583 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 8630 3600 28  0001 C CNN
+F 3 "" V 8780 3600 50  0000 C CNN
+F 4 "10.2020.0015" H 8770 3508 28  0000 L CNN "katodo"
+	1    8700 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 6K8 R23
+U 1 1 57B3AA18
+P 8700 3250
+F 0 "R23" H 8770 3324 50  0000 L CNN
+F 1 "6K8" H 8770 3233 50  0000 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM10mm" V 8630 3250 28  0001 C CNN
+F 3 "" V 8780 3250 50  0000 C CNN
+F 4 "10.2020.0018" H 8770 3159 28  0000 L CNN "katodo"
+	1    8700 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8500 3000 8700 3000
+Wire Wire Line
+	8700 3000 8700 3100
+Wire Wire Line
+	8700 3400 8700 3450
+$Comp
+L GND #PWR044
+U 1 1 57B3AA21
+P 8700 3750
+F 0 "#PWR044" H 8700 3750 30  0001 C CNN
+F 1 "GND" H 8700 3680 30  0001 C CNN
+F 2 "" H 8700 3750 60  0000 C CNN
+F 3 "" H 8700 3750 60  0000 C CNN
+	1    8700 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 3425 9025 3425
+Connection ~ 8700 3425
+$EndSCHEMATC

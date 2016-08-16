@@ -1,0 +1,315 @@
+Cmp-Mod V01 Created by PcbNew   date = 11/08/2016 09:31:11
+
+BeginCmp
+TimeStamp = 551AFCE5
+Path = /56D743B5
+Reference = P1;
+ValeurCmp = Digital;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_2x18;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFCFC
+Path = /56D71773
+Reference = P2;
+ValeurCmp = Power;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFD13
+Path = /56D72F1C
+Reference = P3;
+ValeurCmp = Analog;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFD2A
+Path = /56D73A0E
+Reference = P4;
+ValeurCmp = Analog;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFD43
+Path = /56D72368
+Reference = P5;
+ValeurCmp = PWM;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x10;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFD5A
+Path = /56D734D0
+Reference = P6;
+ValeurCmp = PWM;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = 551AFD71
+Path = /56D73F2C
+Reference = P7;
+ValeurCmp = Communication;
+IdModule  = Socket_Arduino_Mega:Socket_Strip_Arduino_1x08;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE07
+Path = /56D70B71
+Reference = P8;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE0C
+Path = /56D70C9B
+Reference = P9;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE11
+Path = /56D70CE6
+Reference = P10;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE16
+Path = /56D70D2C
+Reference = P11;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE1B
+Path = /56D711A2
+Reference = P12;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 5524FE20
+Path = /56D711F0
+Reference = P13;
+ValeurCmp = CONN_01X01;
+IdModule  = Socket_Arduino_Mega:Arduino_1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC536F
+Path = /57AC566E/57AC5B85
+Reference = P14;
+ValeurCmp = CONN_01X02;
+IdModule  = w_conn_kk100:kk100_22-23-2021;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC53D6
+Path = /57AC566E/57AC5B99
+Reference = P15;
+ValeurCmp = CONN_01X16;
+IdModule  = Connectors_JST_PH:Connectors_JST_B16B-PH-K;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC53E6
+Path = /57AC566E/57AC5B83
+Reference = R1;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC53F6
+Path = /57AC566E/57AC5B82
+Reference = R2;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5406
+Path = /57AC566E/57AC5B8A
+Reference = R3;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5416
+Path = /57AC566E/57AC5B89
+Reference = R4;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5426
+Path = /57AC566E/57AC5B8F
+Reference = R5;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5436
+Path = /57AC566E/57AC5B8E
+Reference = R6;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5446
+Path = /57AC566E/57AC5B94
+Reference = R7;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5456
+Path = /57AC566E/57AC5B93
+Reference = R8;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5466
+Path = /57AC566E/57AC6738
+Reference = R9;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5476
+Path = /57AC566E/57AC6731
+Reference = R10;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5486
+Path = /57AC566E/57AC6761
+Reference = R11;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5496
+Path = /57AC566E/57AC675A
+Reference = R12;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC54A6
+Path = /57AC566E/57AC6789
+Reference = R13;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC54B6
+Path = /57AC566E/57AC6782
+Reference = R14;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC54C6
+Path = /57AC566E/57AC67B2
+Reference = R15;
+ValeurCmp = 68K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC54D6
+Path = /57AC566E/57AC67AB
+Reference = R16;
+ValeurCmp = 12K;
+IdModule  = Resistors_ThroughHole:Resistor_Horizontal_RM10mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5333
+Path = /57AC566E/57AC6748
+Reference = C5;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5341
+Path = /57AC566E/57AC6770
+Reference = C6;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC534F
+Path = /57AC566E/57AC6799
+Reference = C7;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5325
+Path = /57AC566E/57AC5B96
+Reference = C4;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5317
+Path = /57AC566E/57AC5B91
+Reference = C3;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC5309
+Path = /57AC566E/57AC5B8C
+Reference = C2;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC52FB
+Path = /57AC566E/57AC5B87
+Reference = C1;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+BeginCmp
+TimeStamp = 57AC535D
+Path = /57AC566E/57AC67C2
+Reference = C8;
+ValeurCmp = 100nF;
+IdModule  = Capacitors_ThroughHole:C_Rect_L7_W2_P5;
+EndCmp
+
+EndListe
