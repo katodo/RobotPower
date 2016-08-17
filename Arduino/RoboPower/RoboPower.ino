@@ -23,6 +23,7 @@
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE|U8G_I2C_OPT_DEV_0);  // I2C / TWI 
 
 unsigned int test;
+
 float  batteryArray[4]={3.628, 3.629, 3.515, 4};
 
 ros::NodeHandle nh;
@@ -41,9 +42,65 @@ void draw(void) {
   // graphic commands to redraw the complete screen should be placed here  
   u8g.setFont(u8g_font_unifont);
   //u8g.setFont(u8g_font_osb21);
-  u8g.drawStr( 0, 22, "Hello World!");
+
+
+  u8g.setPrintPos(0, 10); 
+  u8g.print("AN0: ");
+  u8g.setPrintPos(u8g.getStrWidth("AN0:"), 10); 
+  u8g.print(averageAnalog(0));
+
+  u8g.setPrintPos(64, 10); 
+  u8g.print("AN1:");
+  u8g.setPrintPos(u8g.getStrWidth("AN1:")+64, 10); 
+  u8g.print(averageAnalog(1));
+
+  u8g.setPrintPos(0, 20); 
+  u8g.print("AN2:");
+  u8g.setPrintPos(u8g.getStrWidth("AN2:"), 20); 
+  u8g.print(averageAnalog(2));
+
+  u8g.setPrintPos(64, 20); 
+  u8g.print("AN3:");
+  u8g.setPrintPos(u8g.getStrWidth("AN3:")+64, 20); 
+  u8g.print(averageAnalog(3));
+
+
+
+
+
+
+
+  u8g.setPrintPos(0, 30); 
+  u8g.print("AN4: ");
+  u8g.setPrintPos(u8g.getStrWidth("AN4:"), 30); 
+  u8g.print(averageAnalog(4));
+
+  u8g.setPrintPos(64, 30); 
+  u8g.print("AN5:");
+  u8g.setPrintPos(u8g.getStrWidth("AN5:")+64, 30); 
+  u8g.print(averageAnalog(5));
+
+  u8g.setPrintPos(0, 40); 
+  u8g.print("AN6:");
+  u8g.setPrintPos(u8g.getStrWidth("AN6:"), 40); 
+  u8g.print(averageAnalog(6));
+
+  u8g.setPrintPos(64, 40); 
+  u8g.print("AN7:");
+  u8g.setPrintPos(u8g.getStrWidth("AN7:")+64, 40); 
+  u8g.print(averageAnalog(7));
+
+
+
+
+
+
+
+
   
-  u8g.drawStr( 0, 44, test);
+  
+  // u8g.drawStr( 0, 22, "Hello World!");
+  // u8g.drawStr( 0, 44, "Hello World!");
 }
 
 void setup()
@@ -117,16 +174,13 @@ void loop()
   str_msg.data = hello;
 
   
- /* 
-  *  adc_msg.adc0 = averageAnalog(0);
-  *  adc_msg.adc1 = averageAnalog(1);
-  *  adc_msg.adc2 = averageAnalog(2);
-  *  adc_msg.adc3 = averageAnalog(3);
-  *  adc_msg.adc4 = averageAnalog(4);
-  *  adc_msg.adc5 = test++; //averageAnalog(5);
-  */
-  adc_msg.adc5 = test++;
-    
+  adc_msg.adc0 = averageAnalog(0);
+  adc_msg.adc1 = averageAnalog(1);
+  adc_msg.adc2 = averageAnalog(2);
+  adc_msg.adc3 = averageAnalog(3);
+  adc_msg.adc4 = averageAnalog(4);
+  adc_msg.adc5 = averageAnalog(5);
+      
   p.publish(&battery_msg);    // Publish BatteryState message
   nh.spinOnce();
 
