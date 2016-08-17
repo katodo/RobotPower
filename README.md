@@ -5,9 +5,43 @@ A Rosserial + **Arduino DUE** based work for Robot's battery and power managment
 ##Clone and install from source Rosserial 
 See reference documentation of [Rosserial](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup)
 
+##Add u8glib library to Arduino's GUI
+(u8glib)[https://github.com/olikraus/u8glib] library is needed, you can add (Arduino ZIP version)[https://github.com/olikraus/U8glib_Arduino/releases/latest] directly from **Arduino GUI -> Sketch -> Include Library -> Add .ZIP Library**
+
 ##Clone this code and load it in an Arduino DUE board.
 
+
 ##Run RosCore.
+
+```
+you$ roscore
+... logging to /home/you/.ros/log/d6f526e8-644b-11e6-8eba-00044b26fb48/roslaunch-plutarco-3242.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+started roslaunch server http://plutarco.local:56239/
+ros_comm version 1.11.20
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: indigo
+ * /rosversion: 1.11.20
+
+NODES
+
+auto-starting new master
+process[master]: started with pid [3253]
+ROS_MASTER_URI=http://plutarco.local:11311/
+
+setting /run_id to d6f526e8-644b-11e6-8eba-00044b26fb48
+process[rosout-1]: started with pid [3266]
+started core service [/rosout]
+```
+pay attention to ROS version: *rosdistro: indigo* 
 
 ##Run serial_node.py 
 This is an output example of output of my *rosrun rosserial_python serial_node.py /dev/ttyACM0* command
