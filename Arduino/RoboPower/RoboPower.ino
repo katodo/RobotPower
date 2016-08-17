@@ -1,11 +1,3 @@
-/* 
- * rosserial ADC Example
- * 
- * This is a poor man's Oscilloscope.  It does not have the sampling 
- * rate or accuracy of a commerical scope, but it is great to get
- * an analog value into ROS in a pinch.
- */
-
 #if (ARDUINO >= 100)
  #include <Arduino.h>
 #else
@@ -20,12 +12,13 @@
 #include <std_msgs/String.h>
 #include <sensor_msgs/BatteryState.h>
 
+// 128x64 oled LCD config
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NONE|U8G_I2C_OPT_DEV_0);  // I2C / TWI 
 
 unsigned int test;
-
-float  batteryArray[4]={3.628, 3.629, 3.515, 4};
-
+float  CellVoltage[4]={3.628, 3.629, 3.515, 4};
+long adc_timer;
+int vMotor1, vMotor2,vBattery, vMainSupply, v24vFilter1, v24vFilter2, v5vSupply, vMainboardSupply;
 ros::NodeHandle nh;
 
 rosserial_arduino::Adc adc_msg;
@@ -38,86 +31,27 @@ std_msgs::String str_msg;
 ros::Publisher chatter("chatter", &str_msg);
 char hello[13] = "hello world!";
 
-void draw(void) {
-  // graphic commands to redraw the complete screen should be placed here  
-  u8g.setFont(u8g_font_unifont);
-  //u8g.setFont(u8g_font_osb21);
 
-
-  u8g.setPrintPos(0, 10); 
-  u8g.print("AN0: ");
-  u8g.setPrintPos(u8g.getStrWidth("AN0:"), 10); 
-  u8g.print(averageAnalog(0));
-
-  u8g.setPrintPos(64, 10); 
-  u8g.print("AN1:");
-  u8g.setPrintPos(u8g.getStrWidth("AN1:")+64, 10); 
-  u8g.print(averageAnalog(1));
-
-  u8g.setPrintPos(0, 20); 
-  u8g.print("AN2:");
-  u8g.setPrintPos(u8g.getStrWidth("AN2:"), 20); 
-  u8g.print(averageAnalog(2));
-
-  u8g.setPrintPos(64, 20); 
-  u8g.print("AN3:");
-  u8g.setPrintPos(u8g.getStrWidth("AN3:")+64, 20); 
-  u8g.print(averageAnalog(3));
-
-
-
-
-
-
-
-  u8g.setPrintPos(0, 30); 
-  u8g.print("AN4: ");
-  u8g.setPrintPos(u8g.getStrWidth("AN4:"), 30); 
-  u8g.print(averageAnalog(4));
-
-  u8g.setPrintPos(64, 30); 
-  u8g.print("AN5:");
-  u8g.setPrintPos(u8g.getStrWidth("AN5:")+64, 30); 
-  u8g.print(averageAnalog(5));
-
-  u8g.setPrintPos(0, 40); 
-  u8g.print("AN6:");
-  u8g.setPrintPos(u8g.getStrWidth("AN6:"), 40); 
-  u8g.print(averageAnalog(6));
-
-  u8g.setPrintPos(64, 40); 
-  u8g.print("AN7:");
-  u8g.setPrintPos(u8g.getStrWidth("AN7:")+64, 40); 
-  u8g.print(averageAnalog(7));
-
-
-
-
-
-
-
-
-  
-  
-  // u8g.drawStr( 0, 22, "Hello World!");
-  // u8g.drawStr( 0, 44, "Hello World!");
-}
+#define VCC_MILLIVOLT                            3300l    // 3.3V as Vref
+#define RES_PARTITORE_INPUT_150K0               15000l  //  150kohm
+#define RES_PARTITORE_INPUT_47K0                 4700l  //  150kohm
+#define RES_PARTITORE_MASSA                      1200l  //  12kohm
 
 void setup()
 { 
+  // Variable's setup
+  test= 0;
+
+  // ROS interface setup
   pinMode(13, OUTPUT);
   nh.initNode();
- test= 0;
   nh.advertise(p);
   nh.advertise(k);
   nh.advertise(chatter);
 
   // LCD setup
   // flip screen, if required
-  // u8g.setRot180();
-  
-  // set SPI backup if required
-  //u8g.setHardwareBackup(u8g_backup_avr_spi);
+  u8g.setRot180();
 
   // assign default color value
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
@@ -132,19 +66,15 @@ void setup()
   else if ( u8g.getMode() == U8G_MODE_HICOLOR ) {
     u8g.setHiColorByRGB(255,255,255);
   }
-  
   pinMode(8, OUTPUT);
-  // END LCD SETUP
+
+  // Arduino DUE 12bit Analog input mode
+  analogReadResolution(12);
 }
 
-//We average the analog reading to elminate some of the noise
-int averageAnalog(int pin){
-  int v=0;
-  for(int i=0; i<4; i++) v+= analogRead(pin);
-  return v/4;
-}
 
-long adc_timer;
+
+
 
 void loop()
 {
@@ -153,8 +83,10 @@ void loop()
   do {
     draw();
   } while( u8g.nextPage() );
+
+  AalogConversion();
   
-  battery_msg.voltage = 23.221;         //  Voltage in Volts (Mandatory)
+  battery_msg.voltage = vBattery;         //  Voltage in Volts (Mandatory)
   battery_msg.current = -2.900;          //  Current in Ampere - Negative when discharging (A)  (If unmeasured NaN)
   battery_msg.charge = 0.241;           //  Current charge in Ampere - Negative when discharging (A)  (If unmeasured NaN)
   battery_msg.capacity = 3.600;          //  Capacity in Ah (last full capacity)  (If unmeasured NaN)
@@ -166,20 +98,19 @@ void loop()
   battery_msg.present=true;                 //  True if the battery is present
   battery_msg.cell_voltage_length= 4;       // Number of cell in pack
   battery_msg.st_cell_voltage= 300;
-  battery_msg.cell_voltage = batteryArray;  //  An array of individual cell voltages for each cell in the pack, If individual voltages unknown but number of cells known set each to NaN
+  battery_msg.cell_voltage = CellVoltage;  //  An array of individual cell voltages for each cell in the pack, If individual voltages unknown but number of cells known set each to NaN
   battery_msg.location="robot";             //  The location into which the battery is inserted. (slot number or plug)
   battery_msg.serial_number="123456790";    //  The best approximation of the battery serial number
-
 
   str_msg.data = hello;
 
   
-  adc_msg.adc0 = averageAnalog(0);
-  adc_msg.adc1 = averageAnalog(1);
-  adc_msg.adc2 = averageAnalog(2);
-  adc_msg.adc3 = averageAnalog(3);
-  adc_msg.adc4 = averageAnalog(4);
-  adc_msg.adc5 = averageAnalog(5);
+  adc_msg.adc0 = vMotor1; //averageAnalog(A0);
+  adc_msg.adc1 = vMotor2; //averageAnalog(A1);
+  adc_msg.adc2 = v24vFilter1; //averageAnalog(A8);
+  adc_msg.adc3 = v24vFilter2; //averageAnalog(A9);
+  adc_msg.adc4 = v5vSupply; //averageAnalog(A10);
+  adc_msg.adc5 = vMainboardSupply; //averageAnalog(A11);
       
   p.publish(&battery_msg);    // Publish BatteryState message
   nh.spinOnce();
@@ -189,10 +120,106 @@ void loop()
   
   chatter.publish(&str_msg);  // Publish an "Hello World" debug message
   nh.spinOnce();
-
   
 }
 
+void AalogConversion(void){
+  long mV;
+  //int vMotor1, vMotor2,vBattery, vMainSupply, v24vFilter1, v24vFilter2, v5vSupply, vMainboardSupply;
+  mV = ((long)averageAnalog(A0)* VCC_MILLIVOLT) / 4095;
+  vMotor1  = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+  
+  mV = ((long)averageAnalog(A1)* VCC_MILLIVOLT) / 4095;
+  vMotor2 = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+  //adc_msg.mvhbridge1 = adc_msg.adc1;
+  
+  mV = ((long)averageAnalog(A2)* VCC_MILLIVOLT) / 4095;
+  vBattery = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+
+  mV = ((long)averageAnalog(A3)* VCC_MILLIVOLT) / 4095;
+  vMainSupply = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+  
+  mV = ((long)averageAnalog(A4)* VCC_MILLIVOLT) / 4095;
+  v24vFilter1 = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+    
+  mV = ((long)averageAnalog(A5)* VCC_MILLIVOLT) / 4095;
+  v24vFilter2 = (signed short)(((mV * (RES_PARTITORE_INPUT_150K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+    
+  mV = ((long)averageAnalog(A6)* VCC_MILLIVOLT) / 4095;
+  v5vSupply = (signed short)(((mV * (RES_PARTITORE_INPUT_47K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+    
+  mV = ((long)averageAnalog(A7)* VCC_MILLIVOLT) / 4095;
+  vMainboardSupply = (signed short)(((mV * (RES_PARTITORE_INPUT_47K0 + RES_PARTITORE_MASSA)) / RES_PARTITORE_MASSA));
+}
+
+void draw(void) {
+  // graphic commands to redraw the complete screen should be placed here  
+  //  u8g.setFont(u8g_font_unifont);  // 10 Pixel Height
+  u8g.setFont(u8g_font_8x13);  // 9 Pixel Height
+
+  u8g.setPrintPos(0, 10); 
+  u8g.print("Motor1: ");
+  u8g.setPrintPos(u8g.getStrWidth("Motor1: "), 10); 
+  u8g.print(vMotor1);
+  u8g.print("mV");
+
+  u8g.setPrintPos(0, 20); 
+  u8g.print("Motor2: ");
+  u8g.setPrintPos(u8g.getStrWidth("Motor2: "), 20); 
+  u8g.print(vMotor2);
+  u8g.print("mV");
+
+  u8g.setPrintPos(0, 30); 
+  u8g.print("Batt. : ");
+  u8g.setPrintPos(u8g.getStrWidth("Batt. : "), 30); 
+  u8g.print(vBattery);
+  u8g.print("mV");
+
+  u8g.setPrintPos(0, 40); 
+  u8g.print("Supply: ");
+  u8g.setPrintPos(u8g.getStrWidth("Supply: "), 40); 
+  u8g.print(vMainSupply);
+  u8g.print("mV");
+
+  u8g.setPrintPos(0, 50); 
+  u8g.print("5V    : ");
+  u8g.setPrintPos(u8g.getStrWidth("5V    : "), 50); 
+  u8g.print(v5vSupply);
+  u8g.print("mV");
+
+  u8g.setPrintPos(0, 60); 
+  u8g.print("CPU   : ");
+  u8g.setPrintPos(u8g.getStrWidth("CPU   : "), 60); 
+  u8g.print(vMainboardSupply);
+  u8g.print("mV");
+  
+  /*u8g.setPrintPos(0, 15); 
+  u8g.print("AN8: ");
+  u8g.setPrintPos(u8g.getStrWidth("AN8:  "), 15); 
+  u8g.print(averageAnalog(A8));
+
+  u8g.setPrintPos(0, 30); 
+  u8g.print("AN9:");
+  u8g.setPrintPos(u8g.getStrWidth("AN9:  "), 30); 
+  u8g.print(averageAnalog(A9));
+
+  u8g.setPrintPos(0, 45); 
+  u8g.print("AN10:");
+  u8g.setPrintPos(u8g.getStrWidth("AN10: "), 45); 
+  u8g.print(averageAnalog(A10));
+
+  u8g.setPrintPos(0, 60); 
+  u8g.print("AN11:");
+  u8g.setPrintPos(u8g.getStrWidth("AN11: "), 60); 
+  u8g.print(averageAnalog(A11));*/
+}
+
+//We average the analog reading to elminate some of the noise
+int averageAnalog(int pin){
+  int v=0;
+  for(int i=0; i<4; i++) v+= analogRead(pin);
+  return v/4;
+}
 
 /*
       enum { POWER_SUPPLY_STATUS_UNKNOWN =  0 };
