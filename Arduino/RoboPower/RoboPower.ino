@@ -51,7 +51,7 @@ void setup()
 
   // LCD setup
   // flip screen, if required
-  u8g.setRot180();
+  //u8g.setRot180();
 
   // assign default color value
   if ( u8g.getMode() == U8G_MODE_R3G3B2 ) {
